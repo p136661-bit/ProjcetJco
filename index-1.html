@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCO | Solusi Tugas Sekolah Terpercaya</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS VARIABLES - THEME BLUE */
+        :root {
+            --primary-blue: #0061ff;
+            --dark-blue: #003366;
+            --soft-blue: #e3f2fd;
+            --accent-blue: #00d2ff;
+            --dark-text: #1a2a3a;
+            --light-text: #f8fbff;
+            --white: #ffffff;
+            --gradient-blue: linear-gradient(135deg, #0061ff 0%, #00d2ff 100%);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: #f0f7ff;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 2000;
+            box-shadow: 0 4px 20px rgba(0, 97, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: -1px;
+        }
+
+        .logo span { color: var(--dark-blue); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin-left: 30px; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            background: radial-gradient(circle at top right, #e3f2fd, #ffffff);
+            display: flex;
+            align-items: center;
+            padding: 100px 8% 50px;
+        }
+
+        .hero-content { flex: 1; }
+        .hero-image { flex: 1; text-align: right; }
+        .hero-image img { 
+            width: 80%; 
+            border-radius: 30px; 
+            box-shadow: 30px 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-blue);
+            background: var(--gradient-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #556677;
+            margin-bottom: 35px;
+            max-width: 550px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--gradient-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0, 97, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 97, 255, 0.4);
+        }
+
+        /* SERVICES */
+        .services { padding: 100px 8%; background: var(--white); }
+
+        .header-box { text-align: center; margin-bottom: 60px; }
+        .header-box h2 { font-size: 2.5rem; color: var(--dark-blue); }
+        .blue-line { 
+            width: 80px; height: 5px; background: var(--gradient-blue); 
+            margin: 15px auto; border-radius: 10px;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--soft-blue);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 97, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            background: var(--white);
+            border-color: var(--primary-blue);
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        /* WA FLOAT BLUE STYLE */
+        .wa-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            background: #25d366; /* Tetap hijau agar user mengenali icon WA */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            z-index: 3000;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .wa-float:hover { transform: rotate(360deg) scale(1.1); }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 8% 30px;
+            text-align: center;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">JCO<span>.SOLUTIONS</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#testi">Testimoni</a></li>
+            <li><a href="https://wa.me/6287875978552?text=halo%20jco%20saya%20butuh%20bantuan">Hubungi Kami</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Butuh Tugas Sekolah?<br><span>JCO Solusinya!</span></h1>
+            <p>Platform asistensi tugas akademik nomor #1. Kami membantu pengerjaan tugas dengan cepat, original, dan nilai yang memuaskan.</p>
+            <a href="https://wa.me/6287875978552?text=halo%20jco%20saya%20butuh%20bantuan" class="btn-main">Konsultasi Tugas Gratis</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Study JCO">
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="header-box">
+            <h2>Layanan Unggulan</h2>
+            <div class="blue-line"></div>
+            <p>Apapun tugasnya, tim profesional JCO siap membantu.</p>
+        </div>
+
+        <div class="grid-services">
+            <div class="card">
+                <i class="fas fa-book-open"></i>
+                <h3>Essay & Makalah</h3>
+                <p>Penulisan artikel dan karya ilmiah bebas plagiasi dengan referensi valid.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-square-root-alt"></i>
+                <h3>Eksakta (MTK/Fisika)</h3>
+                <p>Pengerjaan soal hitungan dengan rumus lengkap dan cara pengerjaan.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>Coding & Desain</h3>
+                <p>Bantuan tugas pemrograman, desain grafis, hingga PowerPoint presentasi.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-vial"></i>
+                <h3>Laporan Praktikum</h3>
+                <p>Penyusunan laporan hasil observasi atau praktikum secara sistematis.</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/6287875978552?text=halo%20jco%20saya%20butuh%20bantuan" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="logo" style="color: white; margin-bottom: 20px;">JCO<span>.SOLUTIONS</span></div>
+        <p>Membantu pelajar Indonesia meraih prestasi maksimal tanpa rasa stres.</p>
+        <div style="margin: 20px 0;">
+            <i class="fab fa-instagram" style="margin: 0 10px; font-size: 1.5rem;"></i>
+            <i class="fab fa-facebook" style="margin: 0 10px; font-size: 1.5rem;"></i>
+            <i class="fab fa-twitter" style="margin: 0 10px; font-size: 1.5rem;"></i>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.6;">&copy; 2026 JCO Jasa Tugas. Professional Academic Assistant.</p>
+    </footer>
+
+    <script>
+        // Animasi muncul saat scroll (Intersection Observer)
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(30px)";
+            card.style.transition = "all 0.6s ease-out";
+            observer.observe(card);
+        });
+
+        // Toggle Navbar on Scroll
+        window.onscroll = function() {
+            let n = document.querySelector('nav');
+            if(window.pageYOffset > 100) {
+                n.style.background = "rgba(255, 255, 255, 1)";
+                n.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
+            } else {
+                n.style.background = "rgba(255, 255, 255, 0.95)";
+                n.style.boxShadow = "none";
+            }
+        };
+    </script>
+</body>
+</html>
